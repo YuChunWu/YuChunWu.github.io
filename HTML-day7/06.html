@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            background-color: #fa0;
+        }
+        /* 
+        @media 裝置類型 and 條件 {
+            符合上述類型跟條件時, 會執行的CSS
+        } */
+        @media screen and (min-width:768px){
+            .box{
+                background-color: #f00;
+            }
+        }
+        @media screen and (min-width:1024px){
+            .box{
+                background-color: #00f;
+            }
+        }
+        @media screen and (min-width:1200px){
+            .box{
+                background-color: #0f0;
+            }
+        }
+        @media screen and (min-width:1400px){
+            .box{
+                background-color: #aaa;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box">box</div>
+</body>
+</html>

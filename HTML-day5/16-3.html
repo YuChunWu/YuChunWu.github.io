@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .wrap:has(.card:hover) .card:not(:hover){
+            opacity: .6;
+        }
+        .card{
+            width: 200px;
+            border: 4px solid #000a;
+            position: relative;
+            margin: 2px;
+            overflow: hidden;
+            opacity: 1;
+            transition: .5s;
+        }
+        .card img{
+            width: 100%;
+            vertical-align: top;
+        }
+        .card .txt{
+            /* background-color: #000a; */
+            background-image: linear-gradient(to bottom, #0000 0%, #0008 15%, #0008 25%);
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: translateY(70%);
+            transition: 1s;
+        }
+        .card .txt h3{
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card .txt p{
+            font-size: 14px;
+        }
+
+        .card:hover .txt{
+            transform: translateY(0%)
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="txt">
+                <h3>DEMO</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, aspernatur.</p>                
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="txt">
+                <h3>DEMO</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, aspernatur.</p>                
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="txt">
+                <h3>DEMO</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, aspernatur.</p>                
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="txt">
+                <h3>DEMO</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, aspernatur.</p>                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

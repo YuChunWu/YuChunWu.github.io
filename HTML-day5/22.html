@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+            clip-path: polygon(
+                0px 0px,
+                200px 200px,
+                0px 200px
+                );
+        }
+        .pic img{
+            clip-path: polygon(
+                50% 0%, 100% 50%, 50% 100%, 0% 50%
+            )
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="pic">
+        <img src="https://picsum.photos/300/300/?random=10">
+    </div>
+</body>
+</html>

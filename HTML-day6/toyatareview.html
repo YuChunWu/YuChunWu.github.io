@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .card{
+            width:960px;
+            padding: 50px 0;
+            margin:auto;
+        }
+        .card .A{
+            width:320px;
+            color: #fff;
+            position: relative;
+        }
+        .card .A .title{
+            background-color: #bd0000;
+            font-size: 30px;
+            padding: 10px;
+        }
+        .card .A .text{
+            background-color: #000;
+            position: absolute;
+            padding: 10px;
+        }
+        .card .B{
+            width:700px;
+            margin-left: auto;
+            margin-right: 50px;
+        }
+        .card .B a{
+            display: flex;
+            align-items: center;
+        }
+        .card .B img:first-child{
+            vertical-align: middle;
+            margin-right: -60px;
+        }
+        .card .B img:last-child{
+            vertical-align: middle;
+        }
+        .card .B img{
+            vertical-align: middle;
+        }
+        .card .C{
+            width:640px;
+            background-color: #ddd;
+            padding: 6px;
+            margin-left: 50px;
+            margin-top: -1em;
+            position: relative;
+            z-index: 4;
+        }
+        .card .C .slg{
+            display: flex;
+            align-items: center;
+            margin-left: 1em;
+            color: #bd0000;
+            font-size: 18px;
+        }
+        .card .C .slg::after{
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 2px;
+            background-color: #bd0000;
+            flex-grow: 1;
+            margin-left: 0.4em;
+            margin-right: 1em;
+        }
+        .card .C h3{
+            background-color: #000;
+            color: #fff;
+            width: fit-content;
+            padding: 1px;
+            margin-left: 1em;
+        }
+        .card .C p::before{
+            content:'';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            margin-left: 1em;
+            background-color: #bd0000;
+            position: relative;
+            top: 2px;
+            /* border-radius: 50%;  */
+            scale: .2;
+        }
+        .card .C p{
+            padding-left: 1em;
+            text-indent: -1em; /*負值凸排, 正值縮排*/
+        }
+    </style>
+</head>
+<body>
+<div class="card-list">
+    <div class="card">
+        <div class="A">
+            <div class="title">
+                <h2>操控樂趣</h2>
+            </div>
+            <div class="text">
+                <h3>人人滿意的駕駛體驗</h3>
+                <p>
+                    透過最佳重量分配，實現平順起步、直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨心馳騁的行駛快感。
+                </p>
+            </div>
+        </div>
+        <div class="B">
+            <a href="#">
+                <img src="https://fakeimg.pl/680x300/CCCCCC/FFF">
+                <img src="https://fakeimg.pl/80x36/FF0000/FFF">
+            </a>
+        </div>
+        <div class="C">
+            <div class="slg">因為我們做了這些革新</div>
+            <div class="item">
+                <h3>低重心設計</h3>
+                <p>透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高度行駛穩定性。</p>
+            </div>
+            <div class="item">
+                <h3>車體剛性強化</h3>
+                <p>車身結構採用高強度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加焊點數量，提升車身抗扭剛性，強化駕馭穩定性及安全性。</p>
+            </div>
+            <div class="item">
+                <h3>四輪獨立懸吊</h3>
+                <p>搭載全新四輪獨立懸吊設定，透過懸吊的高乘載強度，保持輪胎抓地力，同時兼顧轉向靈敏度與清晰路感回饋，提升駕馭樂趣。
+                </p>
+            </div>
+    </div>
+</div>
+
+
+</body>
+</html>

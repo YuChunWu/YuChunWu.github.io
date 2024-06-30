@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .list{
+            --col-count: 3;
+            display: grid;
+            grid-template-columns: repeat(var(--col-count), 1fr);
+            grid-auto-flow: dense;
+            gap: 10px;
+        }
+        @media screen and (min-width:768px) {
+            .list{
+                --col-count: 6;
+            }
+        }
+        @media screen and (min-width:1024px) {
+            .list{
+                --col-count: 10;
+            }
+        }
+        @media screen and (min-width:1400px) {
+            .list{
+                --col-count: 15;
+            }
+        }
+        .list li img{
+            width: 100%;
+            vertical-align: top;
+        }
+        .list li:nth-child(5n){
+            /* grid-column-end: span 2;
+            grid-row-end: span 2; */
+            grid-area: auto / auto / span 2 / span 2;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="list">
+        <!-- li*60>img[src='https://picsum.photos/300/200/?random=$$']-->
+        <li><img src="https://picsum.photos/100/100?random=01" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=02" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=03" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=04" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=05" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=06" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=07" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=08" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=09" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=10" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=11" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=12" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=13" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=14" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=15" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=16" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=17" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=18" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=19" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=20" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=21" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=22" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=23" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=24" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=25" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=26" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=27" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=28" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=29" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=30" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=31" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=32" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=33" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=34" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=35" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=36" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=37" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=38" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=39" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=40" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=41" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=42" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=43" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=44" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=45" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=46" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=47" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=48" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=49" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=50" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=51" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=52" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=53" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=54" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=55" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=56" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=57" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=58" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=59" alt=""></li>
+        <li><img src="https://picsum.photos/100/100?random=60" alt=""></li>
+    
+    </ul>
+    
+</body>
+</html>

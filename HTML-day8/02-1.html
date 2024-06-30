@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            display: flex;
+            flex-wrap: wrap;
+            width: 960px;
+            margin: auto;
+            border: 2px solid #f00;
+        }
+
+        .left{
+            width: calc(25% - 20px);
+            height: 200px;
+            margin: 0 10px;
+            background-color: #fa0;
+        }
+        .right{
+            width: calc(70.833333% - 20px);
+            height: 200px;
+            margin: 0 10px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

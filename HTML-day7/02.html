@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .list{
+            width: 960px;
+            display: grid;
+            grid-template: repeat(2,auto)/ repeat(4,1fr);
+            gap: 20px;            
+        }
+        .card{
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+        }
+        .card img{
+            width: 100%;
+            border-radius: 6px;
+            vertical-align: top;
+        }
+        .card .txt{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:first-child{
+            grid-area: 1 / 1/ span 2/span 2;
+        }
+        .card p{
+            display: none;
+        }
+        .card time{
+            margin-top: auto;
+        }
+        .card.active{
+            grid-area: 1/1/span 2/ span 2;
+        }
+        .card.active p{
+            display: block;
+        }
+        .card.active .txt{
+            display: grid;
+            grid-template: repeat(2,auto)/repeat(2,1fr);
+            gap: 20px;
+        }
+        .card.active .txt h3{
+            grid-row: 1 / span 2;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="list">
+        <div class="card active">
+            <div class="pic">
+                <img src="https://fakeimg.pl/300x200/ccc/fff">
+            </div>
+            <div class="txt">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit facilis minus laboriosam magnam reiciendis nam corrupti debitis, aliquam quibusdam?</p>
+                <time datetime="2024.06.20">2024.06.20</time>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://fakeimg.pl/300x200/ccc/fff">
+            </div>
+            <div class="txt">
+                <h3>title</h3>
+                <time datetime="2024.06.20">2024.06.20</time>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://fakeimg.pl/300x200/ccc/fff">
+            </div>
+            <div class="txt">
+                <h3>title</h3>
+                <time datetime="2024.06.20">2024.06.20</time>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://fakeimg.pl/300x200/ccc/fff">
+            </div>
+            <div class="txt">
+                <h3>title</h3>
+                <time datetime="2024.06.20">2024.06.20</time>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://fakeimg.pl/300x200/ccc/fff">
+            </div>
+            <div class="txt">
+                <h3>title 義大利麵就應該拌42號混泥土</h3>
+                <time datetime="2024.06.20">2024.06.20</time>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

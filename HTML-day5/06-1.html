@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .card-list{
+            display: flex;
+            border: 2px solid red;
+        }
+        .card{
+            width: 0;
+            flex-grow: 1;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+        }
+        .card img{
+            width: 100%;
+        }
+        .txt{
+            /* background-color: #ccc; */
+            flex-grow: 1; /*讓文字區等高*/
+            display: flex; /*讓文字區橫向排列*/
+            flex-direction: column;
+        }
+        .card p{
+            margin-bottom: 20px;
+        }
+        .card a{
+            display: block;
+            padding: 4px 10px;
+            text-align: center;
+            background-color: #fa0;
+            color: #fff;
+            text-decoration: none;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <div class="card-list">
+        <div class="card">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="txt">
+                <h3>title</h3>
+                <p>事實上此時稱為聯繫方式頻道，上傳其實正是懷疑頭銜，估計改變增長整合整合優勢時間拒絶以往中間網咖運行較高電池，面議新技術一座十分總體不得不總。</p>
+                <a href="">加入購物車</a>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="txt">
+                <h3>title</h3>
+                <p>顧客可見億元人們動態有效申請永遠，風險一會學校打造有效一半一時再也，年度行為，偉大飯店，出生電池形。</p>
+                <a href="">加入購物車</a>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="txt">
+                <h3>title</h3>
+                <p>財經成立測試出台楠雅開了維修本網站就業點點，鍵盤電腦為你小。</p>
+                <a href="">加入購物車</a>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hb{
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            position: relative;
+        }
+        .hb span{
+            width: 75%;
+            height: 2px;
+            background-color: #fa0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 19px;
+        }
+        .hb span:nth-child(1) {
+            transform: translateY(-6px);
+        }
+        .hb span:nth-child(3) {
+            transform: translateY(6px);
+        }
+    </style>
+</head>
+<body>
+    <div class="hb">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

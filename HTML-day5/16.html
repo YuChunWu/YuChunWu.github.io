@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 300px;
+            border: 4px solid #f00;
+            position: relative;
+        }
+        .card img{
+            width: 100%;
+            vertical-align: top;
+        }
+        .card .txt{
+            background-color: #000a;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .card:hover .txt{
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="pic">
+            <img src="https://picsum.photos/300/200/?random=10">
+        </div>
+        <div class="txt">
+            DEMO
+        </div>
+    </div>
+    
+</body>
+</html>

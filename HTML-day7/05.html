@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            width: 600px;
+            height: 600px;
+            border: 5px solid #ddd;
+            display: grid;
+            grid-template: repeat(3,1fr) / repeat(2,1fr);
+            gap: 10px;
+            grid-template-areas:
+                "header header"
+                "menu content"
+                "footer footer"
+            ;
+        }
+        .header{
+            grid-area: header;
+            background-color: #ffa;
+        }
+        .menu{
+            grid-area: menu;
+            background-color: #aff;
+        }
+        .content{
+            grid-area: content;
+            background-color: #faf;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: #afa;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="header">header A</div>
+        <div class="menu">menu B</div>
+        <div class="content">content C</div>
+        <div class="footer">Footer D</div>
+    </div>
+
+</body>
+</html>

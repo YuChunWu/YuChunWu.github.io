@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            --ooxx: 200px;
+        }
+        .box{
+            --ooxx: 100px; /*自訂屬性開頭2個減號--*/
+            /*自訂屬性只有自己與子層吃的到*/
+            width: var(--ooxx);
+            height: var(--ooxx);
+            background-color: #fa0;
+            margin-bottom: 20px;
+        }
+        .box2{
+            width: var(--ooxx);
+            height: var(--ooxx);
+            background-color: #afa;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <div class="box" style="--ooxx: 50px"></div> -->
+    <div class="wrap">
+        <div class="box"></div>
+        <div class="box2"></div>
+    </div>
+
+</body>
+</html>
