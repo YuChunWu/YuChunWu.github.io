@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>終極密碼</title>
+    <style>
+      body{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #000;
+      }
+      .title h1 {
+        font-family: 金畫字;
+        font-size: 64px;
+        text-align: center;
+      }
+      *:not(.title h1) {
+        font-size: 16px;
+        font-family: Noto Sans TC;
+      }
+      .game-container {
+        width: 400px;
+        text-align: center;
+        padding: 20px;
+        border: 2px dashed #eee;
+        border-radius: 10px;
+        background-color: #333;
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="text"] {
+        padding: 5px;
+        font-style: 16px;
+        width: 200px;
+        text-align: center;
+      }
+      .button {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 20px;
+        border: .5px solid;
+        border-radius: 60px;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #fff;
+        transition: background-color 0.5s ease; /* 添加延遲效果，時間為0.5秒 */
+        cursor: pointer;
+        color: #7e7e7e;
+      }
+      button:hover {
+        background-color: #eee; /* 滑鼠懸停時的顏色 */
+        color:#8f8f8f;
+      }
+    </style>
+
+
+    <script>
+        let min, max, answer, attempts;
+
+        function initGame() {
+            min = 1;
+            max = 100;
+            answer = Math.floor(Math.random() * (max - min + 1)) + min;
+            attempts = 0;
+            document.getElementsByClassName;
+            document.getElementsByClassName("guessInput").value = '';
+            document.getElementsByClassName("result").innerText = '';
+            document.getElementsByClassName("guessButton").disabled = false;
+            document.getElementById("minValue").innerText = min;
+            document.getElementById("maxValue").innerText = max;
+            document.getElementsByClassName("restartMessage").innerText = '';
+        }
+
+        function guessNumber() {
+            let guess = parseInt(document.getElementsByClassName("guessInput").value);
+            document.getElementsByClassName("guessInput").value = '';
+            attempts++;
+
+            if (isNaN(guess) || guess < min || guess > max) {
+                document.getElementsByClassName("result").innerText = `請輸入 ${min} 到 ${max} 之間的數字。`;
+            } else if (guess > answer) {
+                max = guess;
+            } else if (guess < answer) {
+                min = guess;
+            } else {
+                document.getElementsByClassName("result").innerText = `答對了！答案是 ${answer}，共用了 ${attempts} 次。`;
+                document.getElementByClassName("guessButton").disabled = true;
+            }
+            document.getElementById("minValue").innerText = min;
+            document.getElementById("maxValue").innerText = max;
+            document.getElementsByClassName("restartMessage").innerText = '';
+        }
+
+        function showAnswer() {
+            document.getElementsByClassName("result").innerText = `答案是 ${answer}。`;
+        }
+
+        function restartGame() {
+            initGame();
+            document.getElementsByClassName("restartMessage").innerText = `重來一次！請輸入 ${min} 到 ${max} 之間的數字`;
+
+        }
+    </script>
+</head>
+<body onload="initGame()">
+  <div class="game-container">
+    <div class="title">
+      <h1>終 極 密 碼</h1>
+      <p>猜數字，範圍 <span id="minValue">1</span> 到 <span id="maxValue">100</span>：</p>
+    </div>
+    <div class="inputbox">
+      <input type="text" class="guessInput">
+    </div>
+    <br>
+    <div class="button">
+      <button class="guessButton" onclick="guessNumber()">Submit</button>
+      <button onclick="showAnswer()">Peek</button>
+      <button onclick="restartGame()">Restart</button>
+    </div>
+    <div class="hintMessage">
+      <p class="result"></p>
+      <p class="restartMessage"></p>
+    </div>
+
+    </div>
+</body>
+</html>

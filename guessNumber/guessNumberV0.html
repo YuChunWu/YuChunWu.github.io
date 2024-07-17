@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>終極密碼 - 開始遊戲</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #000;
+      }
+      .title h1 {
+        font-family: 金畫字;
+        color: #fff;
+        font-size: 64px;
+        text-align: center;
+      }
+      *:not(.title h1) {
+        font-size: 16px;
+        font-family: Noto Sans TC;
+      }
+      .game-container {
+        width: 400px;
+        text-align: center;
+        padding: 20px;
+        border: 2px dashed #eee;
+        border-radius: 10px;
+        background-color: #333;
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .start-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #fff;
+        border: none;
+        border-radius: 60px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .start-button:hover {
+        background-color: #eee;
+      }
+    </style>
+</head>
+<body>
+  <div class="game-container">
+    <div class="title">
+      <h1>終 極 密 碼</h1>
+    <br>
+    <div class="button">
+      <button class="start-button" onclick="startGame()">開始遊戲</button>
+    </div>
+
+
+    </div>
+
+
+    <script>
+        function startGame() {
+            window.location.href = "guessNumberV1.html"; // 導向遊戲頁面
+        }
+    </script>
+</body>
+</html>

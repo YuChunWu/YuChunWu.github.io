@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>my todo list</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="input-group mb-3">
+        <input
+          id="todo_input"
+          type="text"
+          class="form-control"
+          placeholder="請輸入待辦事項..."
+        />
+        <button class="btn btn-primary" type="button" id="add_btn">新增</button>
+      </div>
+      <ul id="todo_list_group" class="list-group">
+        <!-- <li class="list-group-item">
+          <div class="input-group">
+            <div class="input-group-text">
+              <input
+                class="form-check-input mt-0"
+                type="checkbox"
+                value=""
+                aria-label="Checkbox for following text input"
+                checked
+              />
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Text input with checkbox"
+            />
+            <button class="btn btn-success" type="button">儲存</button>
+            <button class="btn btn-warning" type="button">編輯</button>
+            <button class="btn btn-danger" type="button">刪除</button>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const todoInput = document.querySelector("#todo_input");
+      const addButton = document.querySelector("#add_btn");
+      const key = "todoList";
+      const todoListGroup = document.querySelector("#todo_list_group");
+
+      addButton.addEventListener("click", function (event) {
+        const todoContent = todoInput.value.trim();
+        if (!todoContent) return;
+        // 儲存待辦事項
+        const todoItem = {
+          id: new Date().valueOf(),
+          content: todoContent,
+          isDone: false,
+        };
+        saveTodoItem(todoItem);
+        // 生成TODO 的 HTML
+        renderingTodoList();
+      });
+      window.addEventListener("load", function (event) {
+        renderingTodoList();
+      });
+
+      function renderingTodoList() {
+        const todoList = getTodoListFromStorage();
+        if (!todoList) return;
+        todoListGroup.innerHTML = "";
+        todoList.forEach((item) => {
+          todoListGroup.innerHTML += createTodoItemHTML(item);
+        });
+      }
+      function getTodoListFromStorage() {
+        //取得現在所有的todoItem,再加上去
+        const localStorageItem = localStorage.getItem(key);
+        return localStorageItem ? JSON.parse(localStorageItem) : [];
+      }
+      function createTodoItemHTML(todoItem) {
+        return `<li class="list-group-item">
+                  <div class="input-group" data-id="${todoItem.id}">
+                    <div class="input-group-text">
+                      <input
+                        class="form-check-input mt-0"
+                        type="checkbox"
+                        oninput="isDoneCheck(${todoItem.id})"
+                        ${todoItem.isDone ? "checked" : ""}
+                      />
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control todo-content"
+                      aria-label="Text input with checkbox"
+                      value="${todoItem.content}"
+                      disabled
+                    />
+                    <button class="btn btn-success save-btn d-none" type="button" onclick="save(${
+                      todoItem.id
+                    }, this)">儲存</button>
+                    <button class="btn btn-warning" type="button" onclick="edit(${
+                      todoItem.id
+                    }, this)">編輯</button>
+                    <button class="btn btn-danger" type="button" onclick="remove(${
+                      todoItem.id
+                    }, this)">刪除</button>
+                  </div>
+                </li>`;
+      }
+      function isDoneCheck(id) {
+        const todoList = getTodoListFromStorage();
+        const todoItem = todoList.find((item) => item.id === id);
+        todoItem.isDone = !todoItem.isDone;
+        saveTodoListToStorage(todoList);
+      }
+      function save(id, el) {
+        const todoContent = el.parentElement.querySelector(".todo-content");
+        const val = todoContent.value.trim();
+        if (!val) return;
+
+        const todoList = getTodoListFromStorage();
+
+        const todoItem = todoList.find((item) => item.id === id);
+        todoItem.content = val;
+        saveTodoListToStorage(todoList);
+        renderingTodoList();
+      }
+      function saveTodoListToStorage(todoList) {
+        const json = JSON.stringify(todoList);
+        localStorage.setItem(key, json);
+      }
+      function edit(id, el) {
+        const todoContent = el.parentElement.querySelector(".todo-content");
+        todoContent.disabled = false;
+        const saveBtn = el.parentElement.querySelector(".save-btn");
+        saveBtn.classList.remove("d-none");
+        el.classList.add("d-none");
+      }
+      function remove(id, el) {
+        const todoList = getTodoListFromStorage();
+        const todoItemIdx = todoList.findIndex((item) => item.id === id);
+        todoList.splice(todoItemIdx, 1);
+        saveTodoListToStorage(todoList);
+        renderingTodoList();
+      }
+      function saveTodoItem(todoItem) {
+        //取得現在所有的todoItem,再加上去
+        const todoList = getTodoListFromStorage();
+        todoList.push(todoItem);
+        saveTodoListToStorage(todoList);
+      }
+    </script>
+  </body>
+</html>
