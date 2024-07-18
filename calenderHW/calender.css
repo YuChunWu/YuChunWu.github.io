@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.calendar {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.header .current-month {
+  font-size: 26px;
+  color: #2a95bf;
+  font-weight: 600;
+}
+
+.header button {
+  background-color: #2a95bf;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.header button:hover {
+  background-color: #2a95bfaa;
+  color: #f2f2f2;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f28d9f;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.weekdays div {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.date {
+  width: calc(100% / 7);
+  height: 150px;
+  border: 1px solid #f28d9f;
+  color: #2a95bf;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  text-align: end;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.days .date:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  transform: translateY(-1.5px);
+  /* 浮起來 */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  /* 陰影 */
+}
+
+.today {
+  color: #1cb64a;
+  font-weight: 800;
+}
+
+li {
+  text-align: start;
+  padding: 3px;
+}
+
+li:hover {
+  border-radius: 5px;
+}
+
+.not-current-month {
+  background-color: #f28da02c;
+  color: #ffc5d0;
+}
+
+.not-current-month:hover {
+  background-color: #ffe2e8;
+  color: #f28da0;
+}
+
+#backToTodayBtn {
+  position: absolute; /* 使用絕對定位 */
+  left: 80px;
+  background-color: #2a95bf;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  
+}

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calender</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="calender.css">
+</head>
+
+<body>
+
+  <div class="calendar">
+    <div class="header">
+      <button id="prev-month">◀</button>
+      <button id="backToTodayBtn">Back to Today</button>
+      <div class="current-month">2024 July</div>
+      <button id="next-month">▶</button>
+    </div>
+    <div class="weekdays">
+      <div class="Sun">Sun</div>
+      <div class="Mon">Mon</div>
+      <div class="Tue">Tue</div>
+      <div class="Wed">Wed</div>
+      <div class="Tue">Thu</div>
+      <div class="Fri">Fri</div>
+      <div class="Sat">Sat</div>
+    </div>
+    <div class="days">
+      <div class="date">1</div>
+      <div class="date">2</div>
+      <div class="date">3</div>
+      <div class="date">4</div>
+      <div class="date">5</div>
+      <div class="date">6</div>
+      <div class="date">7</div>
+      <div class="date">8</div>
+      <div class="date">9</div>
+      <div class="date">10</div>
+      <div class="date">11</div>
+      <div class="date">12</div>
+      <div class="date">13</div>
+      <div class="date">14</div>
+      <div class="date">15</div>
+      <div class="date">16</div>
+      <div class="date">17</div>
+      <div class="date">18</div>
+      <div class="date">19</div>
+      <div class="date">20</div>
+      <div class="date">21</div>
+      <div class="date">22</div>
+      <div class="date">23</div>
+      <div class="date">24</div>
+      <div class="date">25</div>
+      <div class="date">26</div>
+      <div class="date">27</div>
+      <div class="date">28</div>
+      <div class="date">29</div>
+      <div class="date">30</div>
+      <div class="date">31</div>
+      <div class="date">32</div>
+      <div class="date">33</div>
+      <div class="date">34</div>
+      <div class="date">35</div>
+    </div>
+
+
+
+    <div class="modal fade" id="todoModal" tabindex="-1" aria-labelledby="todoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="todoModalLabel">Schedule</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group mb-3">
+                <select class="form-control" id="year"></select>
+                <div class="input-group-text">Year</div>
+
+                <select class="form-control ms-2" id="month"></select>
+                <div class="input-group-text">Month</div>
+
+                <select class="form-control ms-2" id="day"></select>
+                <div class="input-group-text">Date</div>
+              </div>
+
+              <div class="input-group mb-3">
+
+                <div class="input-group mb-3">
+                  <div class="input-group-text">Time</div>
+                  <input type="time" class="form-control" id="todoTime">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-text">Event</div>
+                  <input type="text" class="form-control" id="todoEvent">
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-text">Place</div>
+                  <input type="text" class="form-control" id="todoPlace">
+                </div>
+
+                <div class="input-group">
+                  <div class="input-group-text">Color Tag</div>
+                  <input type="color" class="form-control" id="todoColor" style="height: 38px">
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="create_btn">Create</button>
+            <button type="button" class="btn btn-warning" id="modify_btn">Modify</button>
+            <button type="button" class="btn btn-danger" id="delete_btn">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script>
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="calendar.js"></script>
+</body>
+
+</html>
