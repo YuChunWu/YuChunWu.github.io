@@ -3,14 +3,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin: 0;
   background-color: #f0f0f0;
 }
 
 .calendar {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   background-color: #fff;
   border-radius: 10px;
