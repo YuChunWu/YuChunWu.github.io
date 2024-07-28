@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V's MockApple</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+  <style>
+    .select-product {
+      margin-top: 15px;
+      margin-left: 300px;
+    }
+
+    .container {
+      display: flex;
+      width: auto;
+    }
+
+    .selection,
+    .card {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+
+    }
+
+    .card {
+      border-radius: 18px;
+      display: block;
+      border: #fff;
+      height: 100%;
+      max-height: 1200px;
+      max-width: none;
+      width: auto;
+    }
+
+    .card img {
+      border-radius: 18px;
+    }
+
+    .selection {
+      flex-basis: 19.2941176471rem;
+      max-width: 19.2941176471rem;
+      align-self: flex-end;
+    }
+
+    .carousel-inner img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .model label,
+    .storage label {
+      display: flex;
+      width: 290px;
+      background-color: #fff;
+      border: 1px solid #8f8f94;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding: 15px;
+    }
+
+    .trade-in label {
+      width: 290px;
+      background-color: #fff;
+      border: 1px solid #8f8f94;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding: 15px;
+      height: 70px;
+      text-align: center;
+    }
+
+
+    .iPhone-15-Pro,
+    .iPhone-15-ProMax,
+    .storage-128gb,
+    .storage-256gb,
+    .storage-512gb,
+    .storage-1tb,
+    .trade-in-choose-one,
+    .trade-in-none,
+    .trade-in-progress {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .iPhone-15-Pro .discription,
+    .iPhone-15-ProMax .discription,
+    .storage-128gb .discription,
+    .storage-256gb .discription,
+    .storage-512gb .discription,
+    .storage-1tb .discription,
+    .trade-in-choose-one .discription,
+    .trade-in-none .discription .trade-in-progress .discription {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price {
+      align-content: center;
+      text-align: right;
+      padding: 15px;
+    }
+
+    .need_help_model,
+    .need_help_storage,
+    .need_help_trade_in {
+      align-items: center;
+      text-align: center;
+      height: 80px;
+    }
+
+    .color-item ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .color-item li {
+      margin-right: 10px;
+    }
+
+    .purchase-summary {
+      background-color: #f5f5f8;
+      display: flex;
+      padding: 20px 140px 0 140px;
+    }
+
+    .summary-model,
+    .summary-model-details,
+    .summary-add-to-bag {
+      flex: 1;
+      padding: 10px;
+      margin: 30px;
+    }
+
+    .radio-image {
+      cursor: pointer;
+      border: 2px solid transparent;
+      width: 45px;
+      height: auto;
+    }
+
+    input[type="radio"]:checked+label .radio-image {
+      outline: 3px solid #0071e3;
+      border-radius: 50%;
+    }
+
+    input[type="radio"]:checked+.phone-label {
+      outline: 2px solid #0071e3;
+    }
+
+    input[type="radio"]:checked+.storage-label {
+      outline: 2px solid #0071e3;
+    }
+
+    #select-final-model-image {
+      width: 400px;
+    }
+
+    a {
+      margin-right: 30px;
+      margin-top: auto;
+    }
+    .disabled-link {
+    pointer-events: none;
+    color: gray;
+    text-decoration: none;
+    cursor: default;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- 上方選單 -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid" style="font-size: 12px;">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="disabled-link active" aria-current="page" href="https://www.apple.com/tw/" target="_blank">
+              <img src="./mockAppleImg/apple-logo.svg" alt="Description"
+                style="width: 12px; height: auto; display: flex; justify-content: center; margin-top: 2px;">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link active" aria-current="page" href="https://www.apple.com/tw/store" target="_blank">商店</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://www.apple.com/tw/mac/" target="_blank">Mac</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://www.apple.com/tw/ipad/" target="_blank">iPad</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://www.apple.com/tw/iphone/">iPhone</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://www.apple.com/tw/watch/">Watch</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://www.apple.com/tw/airpods/">AirPods</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://www.apple.com/tw/tv-home/">TV和家庭</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://www.apple.com/tw/services/">娛樂</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://www.apple.com/tw/shop/accessories/all">配件</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="https://support.apple.com/zh-tw">支援服務</a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="#">
+              <div class="div"></div>
+              <img src="./mockAppleImg/search.svg" alt="Description"
+                style="width: 12px; height: auto; display: flex; justify-content: center; margin-top: 2px;">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="disabled-link" href="#">
+              <img src="./mockAppleImg/shopping_bag.svg" alt="Description"
+                style="width: 12px; height: auto; display: flex; justify-content: center; margin-top: 2px;">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header>
+    <div class="wrapper">
+      <div class="select-product">
+        <h1>
+          購買iPhone 15 Pro
+        </h1>
+        <div class="select-product-price"></div>
+      </div>
+    </div>
+  </header>
+  <div class="container" id="app">
+    <div class="card">
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item" v-for="(img, index) in selectedImages" :key="index"
+            :class="{ active: index === 0 }">
+            <img :src="img" class="d-block w-100" alt="">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="selection" style="border-style: none;">
+      <div class="model mb-5">
+        <span><strong>機型。</strong></span>
+        <span style="color: #86868b"><strong>哪一款最適合你？</strong></span>
+        <li style="display: block;">
+          <input type="radio" class="phone-radio" id="iPhone-15-Pro" name="phone" v-model="selectedPhone"
+            value="iPhone-15-Pro" style="display: none;">
+          <label for="iPhone-15-Pro" class="phone-label">
+            <span class="iPhone-15-Pro">
+              <span class="discription">
+                <span class="model-info" style="font-size: 17px; font-weight: bold">iPhone 15 Pro</span>
+                <span class="model-monitor-info" style="font-size: 12px">6.1 吋顯示器</span>
+              </span>
+              <span class="price" style="font-size: 12px">
+                NT$36,900起
+              </span>
+            </span>
+          </label>
+        </li>
+        <li style="display: block;">
+          <input type="radio" class="phone-radio" id="iPhone-15-ProMax" name="phone" v-model="selectedPhone"
+            value="iPhone-15-ProMax" style="display: none;">
+          <label for="iPhone-15-ProMax" class="phone-label">
+            <span class="iPhone-15-ProMax">
+              <span class="discription">
+                <span class="model-info" style="font-size: 17px; font-weight: bold">iPhone 15 ProMax</span>
+                <span class="model-monitor-info" style="font-size: 12px">6.7 吋顯示器</span>
+              </span>
+              <span class="price" style="font-size: 12px">
+                NT$44,900起
+              </span>
+            </span>
+          </label>
+        </li>
+        <label class="need_help_model" style="background-color: #f5f5f7; border-style: none;">
+          <span class="discription">
+            <p style="font-size: 14px">
+              <b>需要選購機型的協助？</b><br>探索螢幕尺寸與電池續航力的差異。
+            </p>
+          </span>
+        </label>
+      </div>
+      <div class="finish mb-5" id="color" style="pointer-events: none; opacity: 0.5;">
+        <span><strong>外觀。</strong></span>
+        <span style="color: #86868b"><strong>挑選你喜愛的外觀。</strong></span>
+        <div class="color-item">
+          <ul>
+            <li v-for="color in colors" :key="color.id">
+              <input type="radio" :id="color.id" name="color" v-model="selectedColor" :value="color.id"
+                style="display: none;">
+              <label :for="color.id">
+                <img :src="color.image" :alt="color.alt" class="radio-image">
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="storage" id="storage" style="pointer-events: none; opacity: 0.5;">
+        <span><strong>儲存裝置。</strong></span>
+        <span style="color: #86868b"><strong>哪一款最適合你？</strong></span>
+        <li style="display: block;">
+          <input type="radio" class="storage-radio" id="storage-128gb" name="storage" style="display: none;">
+          <label for="storage-128gb" class="storage-label">
+            <span class="storage-128gb">
+              <span class="discription">
+                <span class="storage-info" style="font-size: 17px; font-weight: bold">128<small
+                    style="font-size: 12px">GB</small></span>
+              </span>
+              <span class="price" style="font-size: 12px">
+                NT$<span class="price-text-128gb"></span>起
+              </span>
+            </span>
+          </label>
+        </li>
+        <li style="display: block;">
+          <input type="radio" class="storage-radio" id="storage-256gb" name="storage" style="display: none;">
+          <label for="storage-256gb" class="storage-label">
+            <span class="storage-256gb">
+              <span class="discription">
+                <span class="storage-info" style="font-size: 17px; font-weight: bold">256<small
+                    style="font-size: 12px">GB</small></span>
+              </span>
+              <span class="price" style="font-size: 12px">
+                NT$<span class="price-text-256gb"></span>起
+              </span>
+            </span>
+          </label>
+        </li>
+        <li style="display: block;">
+          <input type="radio" class="storage-radio" id="storage-512gb" name="storage" style="display: none;">
+          <label for="storage-512gb" class="storage-label">
+            <span class="storage-512gb">
+              <span class="discription">
+                <span class="storage-info" style="font-size: 17px; font-weight: bold">512<small
+                    style="font-size: 12px">GB</small></span>
+              </span>
+              <span class="price" style="font-size: 12px">
+                NT$<span class="price-text-512gb"></span>起
+              </span>
+            </span>
+          </label>
+        </li>
+        <li style="display: block;">
+          <input type="radio" class="storage-radio" id="storage-1tb" name="storage" style="display: none;">
+          <label for="storage-1tb" class="storage-label">
+            <span class="storage-1tb">
+              <span class="discription">
+                <span class="storage-info" style="font-size: 17px; font-weight: bold">1<small
+                    style="font-size: 12px">TB</small></span>
+              </span>
+              <span class="price" style="font-size: 12px">
+                NT$<span class="price-text-1tb"></span>起
+              </span>
+            </span>
+          </label>
+        </li>
+        <label class="need_help_storage" style="background-color: #f5f5f7; border-style: none;">
+          <span class="discription">
+            <p style="font-size: 14px"><b>不確定需要多少儲存空間？</b><br>讓我們幫你更清楚瞭解你所需的空間。</p>
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="purchase-summary">
+    <div class="summary-model">
+      <span>
+        <h2>
+          <strong>
+            <span>
+              你的全新<br>
+              <span class="select-final-model"></span>
+              <br>
+            </span>
+            <span>
+              依你的需求量身打造。
+            </span>
+          </strong>
+        </h2>
+        <img id="select-final-model-image" src="./mockAppleImg/iphone-15-pro-max-blacktitanium-select_AV2.jfif">
+      </span>
+    </div>
+
+    <div class="summary-model-details">
+
+      <p class="summary-model-storage-color-text"></p>
+      <p class="summary-model-price"><strong>NT$<span class="final-price-text">36,900</span>起</strong></p>
+      <br>
+      <p class="summary-vat" style="display: none;">含加值型營業稅：約 NT$<span class="vat-text"></span>*。</p>
+      <hr>
+      <p>
+        需要一點時間嗎？<br>
+        將這部裝置收藏到「你的收藏」，即可保留你選擇的所有配置，你可以隨時從上次離開處接續進行。
+      </p>
+      <hr>
+      <p>
+        你所在的區域運送詳細資訊將在「結帳」顯示。
+      </p>
+    </div>
+    <div class="summary-add-to-bag">
+      <p>立即訂購。店內取貨：<br>
+        今天，地點：Apple 台北101</p>
+      <a href="">查看其他直營店</a>
+      <div class="add-to-bag">
+
+        <button class="btn btn-primary">加入購物袋</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          selectedPhone: 'iPhone-15-Pro',
+          selectedColor: 'color-natural-titanium',
+          colors: [
+            { id: 'color-natural-titanium', image: './mockAppleImg/iphone-pro-finish-naturaltitanium-202309.jfif', alt: 'Natural Titanium' },
+            { id: 'color-blue-titanium', image: './mockAppleImg/iphone-pro-finish-bluetitanium-202309.jfif', alt: 'Blue Titanium' },
+            { id: 'color-white-titanium', image: './mockAppleImg/iphone-pro-finish-whitetitanium-202309.jfif', alt: 'White Titanium' },
+            { id: 'color-black-titanium', image: './mockAppleImg/iphone-pro-finish-blacktitanium-202309.jfif', alt: 'Black Titanium' }
+          ],
+          images: {
+            'iPhone-15-Pro': {
+              'color-natural-titanium': [
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3.webp'
+              ],
+              'color-blue-titanium': [
+                './mockAppleImg/iphone-15-pro-6-1inch-bluetitanium.webp',
+                './mockAppleImg/iphone-15-pro-6-1inch-bluetitanium_AV1.webp',
+                './mockAppleImg/iphone-15-pro-6-1inch-bluetitanium_AV2.webp',
+                './mockAppleImg/iphone-15-pro-6-1inch-bluetitanium_AV3.webp'
+              ],
+              'color-white-titanium': [
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-whitetitanium.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-whitetitanium_AV1.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-whitetitanium_AV2.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-whitetitanium_AV3.webp'
+              ],
+              'color-black-titanium': [
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-blacktitanium.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-blacktitanium_AV1.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-blacktitanium_AV2.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-1inch-blacktitanium_AV3.webp'
+              ]
+            },
+            'iPhone-15-ProMax': {
+              'color-natural-titanium': [
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium_AV1.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium_AV2.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium_AV3.webp'
+              ],
+              'color-blue-titanium': [
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium_AV1.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium_AV2.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium_AV3.webp'
+              ],
+              'color-white-titanium': [
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-whitetitanium.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-whitetitanium_AV1.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-whitetitanium_AV2.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-whitetitanium_AV3.webp'
+              ],
+              'color-black-titanium': [
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-blacktitanium.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-blacktitanium_AV1.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-blacktitanium_AV2.webp',
+                './mockAppleImg/iphone-15-pro-finish-select-202309-6-7inch-blacktitanium_AV3.webp'
+              ]
+            }
+          }
+        };
+      },
+      computed: {
+        selectedImages() {
+          return this.images[this.selectedPhone][this.selectedColor];
+        }
+      },
+      watch: {
+        selectedImages() {
+          this.$nextTick(() => {
+            const carouselElement = document.querySelector('#carouselExampleIndicators');
+            const carouselInstance = bootstrap.Carousel.getInstance(carouselElement);
+            if (carouselInstance) {
+              carouselInstance.to(0); // Go to first image
+            } else {
+              new bootstrap.Carousel(carouselElement);
+            }
+          });
+        }
+      },
+      mounted() {
+        this.$nextTick(() => {
+          const carouselElement = document.querySelector('#carouselExampleIndicators');
+          new bootstrap.Carousel(carouselElement);
+        });
+      },
+    }).mount('#app');
+  </script>
+
+  <script>
+    let model = '';
+    let color = '';
+    let storage = '';
+    let price = '';
+    let modelForImg = '';
+    let colorForImg = '';
+
+    const images = {
+      'iPhone-15-Pro': {
+        'color-natural-titanium': [
+          './mockAppleImg/iphone-15-pro-naturaltitanium-select_AV2.jfif'
+        ],
+        'color-blue-titanium': [
+          './mockAppleImg/iphone-15-pro-bluetitanium-select_AV2.jfif'
+        ],
+        'color-white-titanium': [
+          './mockAppleImg/iphone-15-pro-whitetitanium-select_AV2.jfif'
+        ],
+        'color-black-titanium': [
+          './mockAppleImg/iphone-15-pro-blacktitanium-select_AV2.jfif'
+        ]
+      },
+      'iPhone-15-Pro-Max': {
+        'color-natural-titanium': [
+          './mockAppleImg/iphone-15-pro-max-naturaltitanium-select_AV2.jfif'
+        ],
+        'color-blue-titanium': [
+          './mockAppleImg/iphone-15-pro-max-bluetitanium-select_AV2.jfif'
+        ],
+        'color-white-titanium': [
+          './mockAppleImg/iphone-15-pro-max-whitetitanium-select_AV2.jfif'
+        ],
+        'color-black-titanium': [
+          './mockAppleImg/iphone-15-pro-max-blacktitanium-select_AV2.jfif'
+        ]
+      }
+    };
+
+    document.querySelectorAll('input[name="phone"]').forEach(input => {
+      input.addEventListener('change', function () {
+        document.getElementById('color').style.pointerEvents = 'auto';
+        document.getElementById('color').style.opacity = '1';
+      });
+    });
+
+    document.querySelectorAll('input[name="color"]').forEach(input => {
+      input.addEventListener('change', function () {
+        document.getElementById('storage').style.pointerEvents = 'auto';
+        document.getElementById('storage').style.opacity = '1';
+      });
+    });
+
+    document.getElementById('iPhone-15-Pro').addEventListener('click', function () {
+      model = 'iPhone 15 Pro';
+      modelForImg = 'iPhone-15-Pro';
+      document.querySelector('.price-text-128gb').textContent = '36,900';
+      document.querySelector('.price-text-256gb').textContent = '40,400';
+      document.querySelector('.price-text-512gb').textContent = '47,400';
+      document.querySelector('.price-text-1tb').textContent = '54,400';
+      document.getElementById('storage-128gb').closest('li').style.display = 'block';
+      document.querySelector('.final-price-text').textContent = '36,900';
+      document.querySelector('.select-final-model').textContent = 'iPhone 15 Pro。';
+    });
+
+    document.getElementById('iPhone-15-ProMax').addEventListener('click', function () {
+      model = 'iPhone 15 Pro Max';
+      modelForImg = 'iPhone-15-Pro-Max';
+      document.querySelector('.price-text-256gb').textContent = '44,900';
+      document.querySelector('.price-text-512gb').textContent = '51,900';
+      document.querySelector('.price-text-1tb').textContent = '58,900';
+      // 隱藏 128GB 選項
+      document.getElementById('storage-128gb').closest('li').style.display = 'none';
+      document.querySelector('.final-price-text').textContent = '44,900';
+      document.querySelector('.select-final-model').textContent = 'iPhone 15 Pro Max。';
+    });
+
+    document.getElementById('color-natural-titanium').addEventListener('click', function () {
+      color = '原色鈦金屬';
+      colorForImg = 'color-natural-titanium';
+      if (model && color && storage) {
+        updateSummary();
+      }
+    });
+    document.getElementById('color-blue-titanium').addEventListener('click', function () {
+      color = '藍色鈦金屬';
+      colorForImg = 'color-blue-titanium';
+      if (model && color && storage) {
+        updateSummary();
+      }
+    });
+    document.getElementById('color-white-titanium').addEventListener('click', function () {
+      color = '白色鈦金屬';
+      colorForImg = 'color-white-titanium';
+      if (model && color && storage) {
+        updateSummary();
+      }
+    });
+    document.getElementById('color-black-titanium').addEventListener('click', function () {
+      color = '黑色鈦金屬';
+      colorForImg = 'color-black-titanium';
+      if (model && color && storage) {
+        updateSummary();
+      }
+    });
+
+    document.getElementById('storage-128gb').addEventListener('click', function () {
+      storage = '128GB';
+      document.querySelector('.final-price-text').textContent = document.querySelector('.price-text-128gb').textContent;
+      if (model && color && storage) {
+        updateSummary();
+      }
+    });
+    document.getElementById('storage-256gb').addEventListener('click', function () {
+      storage = '256GB';
+      document.querySelector('.final-price-text').textContent = document.querySelector('.price-text-256gb').textContent;
+      if (model && color && storage) {
+        updateSummary();
+      }
+    });
+    document.getElementById('storage-512gb').addEventListener('click', function () {
+      storage = '512GB';
+      document.querySelector('.final-price-text').textContent = document.querySelector('.price-text-512gb').textContent;
+      if (model && color && storage) {
+        updateSummary();
+      }
+    });
+    document.getElementById('storage-1tb').addEventListener('click', function () {
+      storage = '1TB';
+      document.querySelector('.final-price-text').textContent = document.querySelector('.price-text-1tb').textContent;
+      if (model && color && storage) {
+        updateSummary();
+      }
+    });
+
+    function updateSummary() {
+      const summaryElement = document.querySelector('.summary-model-storage-color-text');
+      summaryElement.textContent = `${model} ${color} ${storage}`;
+      const finalPrice = document.querySelector('.final-price-text').textContent;
+      const number = parseFloat(finalPrice.replace(/,/g, ''));
+      const result = number / 1.05 * 0.05;
+      document.querySelector('.vat-text').textContent = Math.round(result).toLocaleString();
+      document.querySelector('.summary-vat').style.display = 'block';
+      const imgElement = document.getElementById('select-final-model-image');
+      imgElement.src = images[modelForImg][colorForImg][0];
+    }
+  </script>
+
+
+</body>
+
+</html>
